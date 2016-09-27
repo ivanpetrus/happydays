@@ -68,9 +68,9 @@ function createResponse(sign, user) {
 }
 
 function hashPassword(password) {
-    //var buffer = new Buffer(password);
-    //var base64 = buffer.toString('base64');
-    return password;
+    var buffer = new Buffer(password);
+    var base64 = buffer.toString('base64');
+    return base64;
 }
 
 function validatePassword(password, hashed) {
