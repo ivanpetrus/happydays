@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "express": "~4.13.4",
-    "azure-mobile-apps": "^3.0.0"
+    "azure-mobile-apps": "^3.0.0",
+    "bcrypt":"^0.8.7"
   }
 }
