@@ -7,6 +7,7 @@ var auth = require('azure-mobile-apps/src/auth'),
 module.exports = {
     // validates a username and password and returns a JWT token if successful
     post: function (req, res, next) {
+
         var context = req.azureMobile,
             // the sign function creates a signed JWT token from provided claims
             sign = auth(context.configuration.auth).sign;

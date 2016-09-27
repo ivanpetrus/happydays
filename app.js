@@ -20,7 +20,7 @@ var mobileApp = azureMobileApps({
     homePage: true,
     // Explicitly enable swagger support. UI support is enabled by
     // installing the swagger-ui npm module.
-    //swagger: true
+    swagger: true
 });
 
 // Import the files from the tables directory to configure the /tables endpoint
