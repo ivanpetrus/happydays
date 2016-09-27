@@ -2,11 +2,18 @@
  * Created by ivanpetrus on 9/27/16.
  */
 var auth = require('azure-mobile-apps/src/auth');
+var basic_auth = require('basic-auth');
 
 module.exports = {
     // validates a username and password and returns a JWT token if successful
     post: function (req, res, next) {
 
+        var credentials = auth(req);
+        if (!credentials || credentials.name !== 'boboone' || credentials.pass !== 'pass') {
+            res.statusCode = 401;
+            res.end('Access denied');
+            return;
+        }
         var context = req.azureMobile,
             // the sign function creates a signed JWT token from provided claims
             sign = auth(context.configuration.auth).sign;
@@ -25,6 +32,13 @@ module.exports = {
 
     // create a new user with the specified username and password and return a JWT token
     put: function (req, res, next) {
+        var credentials = auth(req);
+        if (!credentials || credentials.name !== 'boboone' || credentials.pass !== 'pass') {
+            res.statusCode = 401;
+            res.end('Access denied');
+            return;
+        }
+        
         var context = req.azureMobile,
             sign = auth(context.configuration.auth).sign;
 
