@@ -1,8 +1,7 @@
 /**
  * Created by ivanpetrus on 9/27/16.
  */
-var auth = require('azure-mobile-apps/src/auth'),
-    bcrypt = require('bcrypt');
+var auth = require('azure-mobile-apps/src/auth');
 
 module.exports = {
     // validates a username and password and returns a JWT token if successful
@@ -53,10 +52,10 @@ function createResponse(sign, user) {
 }
 
 function hashPassword(password) {
-    return bcrypt.hashSync(password, 10);
+    return password;
 }
 
 function validatePassword(password, hashed) {
-    return bcrypt.compareSync(password, hashed)
+    return password == hashed;
 }
 
