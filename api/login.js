@@ -66,10 +66,10 @@ function createResponse(sign, user) {
 }
 
 function hashPassword(password) {
-    return password;
+    return password.toBase64();
 }
 
 function validatePassword(password, hashed) {
-    return password == hashed;
+    return password.toBase64() == hashed;
 }
 
