@@ -1,60 +1,39 @@
-var express = require('express');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+// ----------------------------------------------------------------------------
+// Copyright (c) 2015 Microsoft Corporation. All rights reserved.
+// ----------------------------------------------------------------------------
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
+// This is a base-level Azure Mobile App SDK.
+var express = require('express'),
+    azureMobileApps = require('azure-mobile-apps');
 
+// Set up a standard Express app
 var app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+// If you are producing a combined Web + Mobile app, then you should handle
+// anything like logging, registering middleware, etc. here
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', routes);
-app.use('/users', users);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
+// Configuration of the Azure Mobile Apps can be done via an object, the
+// environment or an auxiliary file.  For more information, see
+// http://azure.github.io/azure-mobile-apps-node/global.html#configuration
+var mobileApp = azureMobileApps({
+    // Explicitly enable the Azure Mobile Apps home page
+    homePage: true,
+    // Explicitly enable swagger support. UI support is enabled by
+    // installing the swagger-ui npm module.
+    //swagger: true
 });
 
-// error handlers
+// Import the files from the tables directory to configure the /tables endpoint
+mobileApp.tables.import('./tables');
 
-// development error handler
-// will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
-    res.status(err.status || 500);
-    res.render('error', {
-      message: err.message,
-      error: err
+// Import the files from the api directory to configure the /api endpoint
+mobileApp.api.import('./api');
+
+// Initialize the database before listening for incoming requests
+// The tables.initialize() method does the initialization asynchronously
+// and returns a Promise.
+mobileApp.tables.initialize()
+    .then(function () {
+        app.use(mobileApp);    // Register the Azure Mobile Apps middleware
+        app.listen(process.env.PORT || 3000);   // Listen for requests
     });
-  });
-}
-
-// production error handler
-// no stacktraces leaked to user
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
-  res.render('error', {
-    message: err.message,
-    error: {}
-  });
-});
-
-
-module.exports = app;
