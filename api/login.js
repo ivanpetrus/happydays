@@ -4,12 +4,14 @@
 var auth = require('azure-mobile-apps/src/auth');
 var basic_auth = require('basic-auth');
 
+var username ='boboone';
+var pass ='pass';
 module.exports = {
     // validates a username and password and returns a JWT token if successful
     post: function (req, res, next) {
 
         var credentials = basic_auth(req);
-        if (!credentials || credentials.name !== 'boboone' || credentials.pass !== 'pass') {
+        if (!credentials || credentials.name !== username || credentials.pass !== pass) {
             res.statusCode = 401;
             res.end('Access denied');
             return;
@@ -33,7 +35,7 @@ module.exports = {
     // create a new user with the specified username and password and return a JWT token
     put: function (req, res, next) {
         var credentials = basic_auth(req);
-        if (!credentials || credentials.name !== 'boboone' || credentials.pass !== 'pass') {
+        if (!credentials || credentials.name !== username || credentials.pass !== pass) {
             res.statusCode = 401;
             res.end('Access denied');
             return;
@@ -72,7 +74,9 @@ function hashPassword(password) {
 }
 
 function validatePassword(password, hashed) {
-    
+
     return  hashPassword(password) == hashed;
 }
+
+
 
