@@ -9,6 +9,13 @@ var table = require('azure-mobile-apps').table();
  password
  isghost
  */
+
+table.columns = {
+    "emajl": "string",
+    "password": "string",
+    "isghost": "boolean"
+};
+
 table.access = 'disabled';
 
 module.exports = table;
