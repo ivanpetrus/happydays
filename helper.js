@@ -24,7 +24,6 @@ exports.createResponse = function (sign, user) {
 
         }),
         id: user.id,
-        user: user
     };
 }
 exports.validateAuth = function (req, res) {
