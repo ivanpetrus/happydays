@@ -10,7 +10,5 @@ table.columns = {
     "provider_id": "string"
 };
 
-table.access = 'disabled';
-
 
 module.exports = table;

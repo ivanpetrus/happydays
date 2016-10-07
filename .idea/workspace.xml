@@ -2,27 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4a9f2841-8437-4947-b218-5d8b1342a7ed" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/associated_contacts.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/associated_contacts.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/contact_type.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/contact_type.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/external_auth.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/notification_type.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/notification_type.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/repetition_type.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/repetition_type.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/user.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/user_contacts.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/user_events.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/user_events.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/user_info.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tables/user_origin.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tables/external_auth.js" afterPath="$PROJECT_DIR$/tables/external_auth.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tables/user.js" afterPath="$PROJECT_DIR$/tables/user.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tables/user_contacts.js" afterPath="$PROJECT_DIR$/tables/user_contacts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tables/user_info.js" afterPath="$PROJECT_DIR$/tables/user_info.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tables/user_origin.js" afterPath="$PROJECT_DIR$/tables/user_origin.js" />
     </list>
     <ignored path="happydays-api.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,7 +24,20 @@
     <favorites_list name="happydays-api" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="external_auth.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tables/external_auth.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#44#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -86,13 +79,13 @@
         <option value="$PROJECT_DIR$/tables/user.js" />
         <option value="$PROJECT_DIR$/tables/associated_contacts.js" />
         <option value="$PROJECT_DIR$/tables/contact_type.js" />
-        <option value="$PROJECT_DIR$/tables/external_auth.js" />
         <option value="$PROJECT_DIR$/tables/notification_type.js" />
         <option value="$PROJECT_DIR$/tables/repetition_type.js" />
         <option value="$PROJECT_DIR$/tables/user_contacts.js" />
         <option value="$PROJECT_DIR$/tables/user_events.js" />
         <option value="$PROJECT_DIR$/tables/user_info.js" />
         <option value="$PROJECT_DIR$/tables/user_origin.js" />
+        <option value="$PROJECT_DIR$/tables/external_auth.js" />
       </list>
     </option>
   </component>
@@ -294,16 +287,16 @@
       <workItem from="1474996213787" duration="8000" />
       <workItem from="1474996257207" duration="8420000" />
       <workItem from="1475823997925" duration="84000" />
-      <workItem from="1475824488612" duration="13668000" />
+      <workItem from="1475824488612" duration="13895000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22180000" />
+    <option name="totallyTimeSpent" value="22407000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="723" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2494043" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -662,16 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tables/external_auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="15" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tables/notification_type.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -754,6 +737,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tables/external_auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
           </folding>
