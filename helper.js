@@ -1,6 +1,7 @@
 /**
  * Created by ivanpetrus on 10/7/16.
  */
+var basic_auth = require('basic-auth');
 
 exports.hashPassword = function (password) {
     var buffer = new Buffer(password);
@@ -10,7 +11,7 @@ exports.hashPassword = function (password) {
 
 exports.validatePassword = function (password, hashed) {
 
-    return  hashPassword(password) == hashed;
+    return  exports.hashPassword(password) == hashed;
 }
 
 exports.createResponse = function (sign, user) {
@@ -19,7 +20,19 @@ exports.createResponse = function (sign, user) {
         token: sign({
             // sub is the only required property. this becomes context.user.id
             // you can add other claims here. they become available as context.user.claims
-            sub: user.username
-        })
+            sub: user.id
+
+        }),
+        id: user.id,
+        user: user
     };
+}
+exports.validateAuth = function (req, res) {
+    var credentials = basic_auth(req);
+    if (!credentials || credentials.name !== global.user || global.pass !== pass) {
+        res.statusCode = 401;
+        res.end('Access denied');
+        return false;
+    }
+    return true;
 }

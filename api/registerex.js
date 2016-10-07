@@ -14,7 +14,8 @@ module.exports = {
                 sign = auth(context.configuration.auth).sign;
 
             var user_table = context.tables('user');
-            user_table.where({email: req.body.email})
+            var external_auth_table = context.tables('external_auth');
+            external_auth_table.where({provider_id: req.body.provider_id})
                 .read()
                 .then(function (users) {
                     if (users.length > 0) {
@@ -22,8 +23,7 @@ module.exports = {
                     }
                     else {
                         user_table.insert({
-                            email: req.body.email,
-                            password: helper.hashPassword(req.body.password)
+                            email: req.body.email
                         })
                             .then(function (user) {
                                 var user_info_table = context.tables('user_info');
@@ -35,7 +35,16 @@ module.exports = {
                                     img_url: req.body.img_url
                                 })
                                     .then(function (userinfo) {
-                                        res.json(helper.createResponse(sign, user));
+                                        external_auth_table.insert({
+                                            user_id: user.id,
+                                            origin_id: req.body.origin_id,
+                                            provider_id: req.body.provider_id
+                                        })
+                                            .then(function (ex_auth) {
+                                                res.json(helper.createResponse(sign, user));
+                                            })
+                                            .catch(next)
+
                                     })
                                     .catch(next)
 
