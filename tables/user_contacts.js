@@ -3,12 +3,13 @@
  */
 var table = require('azure-mobile-apps').table();
 
-/*
- id
- user_id
- contact_id
- contact_type
- */
+
+table.columns = {
+    "user_id": "string",
+    "contact_id": "string",
+    "contact_type": "number"
+};
+
 table.access = 'disabled';
 
 module.exports = table;

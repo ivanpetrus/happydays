@@ -1,12 +1,12 @@
 /**
- * Created by ivanpetrus on 9/27/16.
+ * Created by ivanpetrus on 10/7/16.
  */
+
 var table = require('azure-mobile-apps').table();
 
 table.columns = {
-    "emajl": "string",
-    "password": "string",
-    "isghost": "boolean"
+    "enum_id": "number",
+    "name": "string"
 };
 
 table.access = 'disabled';
