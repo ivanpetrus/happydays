@@ -8,7 +8,8 @@ var express = require('express'),
 
 // Set up a standard Express app
 var app = express();
-
+global.user ="bobo";
+global.pass = "pass";
 // If you are producing a combined Web + Mobile app, then you should handle
 // anything like logging, registering middleware, etc. here
 
