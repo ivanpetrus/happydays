@@ -30,7 +30,7 @@ module.exports = {
                     res.status(401).send("Incorrect username or password");
             })
             .catch(next);
-    },
+    }
 
 }
 
