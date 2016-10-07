@@ -17,13 +17,13 @@ exports.validatePassword = function (password, hashed) {
 exports.createResponse = function (sign, user) {
     return {
         // this JWT token must be applied on the Mobile Apps client using the appropriate client APIs
-        token: sign({
+        MobileServiceAuthenticationToken: sign({
             // sub is the only required property. this becomes context.user.id
             // you can add other claims here. they become available as context.user.claims
             sub: user.id
 
         }),
-        id: user.id,
+        UserId: user.id,
     };
 }
 exports.validateAuth = function (req, res) {
