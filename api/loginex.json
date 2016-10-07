@@ -3,7 +3,7 @@
     "access": "disabled"
   },
   "post": {
-    "access": "authenticated"
+    "access": "anonymous"
   },
   "put": {
     "access": "disabled"

@@ -6,7 +6,7 @@
     "access": "disabled"
   },
   "put": {
-    "access": "authenticated"
+    "access": "anonymous"
   },
   "patch": {
     "access": "disabled"
