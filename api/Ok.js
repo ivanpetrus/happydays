@@ -6,6 +6,6 @@
 module.exports = {
     // api methods can be defined with an array of middleware functions
     get:  function (req, res, next) {
-        res.status(200).send();
+        res.status(200).send("Hello from Happy days");
     }
 }

@@ -9,10 +9,11 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "express": "~4.13.4",
+    "amazon-affiliate-api": "0.0.4",
     "azure-mobile-apps": "^3.0.0",
-    "bcrypt":"^0.8.7",
-    "basic-auth":"^1.0.4",
-    "fb":"^1.1.1"
+    "basic-auth": "^1.0.4",
+    "bcrypt": "^0.8.7",
+    "express": "~4.13.4",
+    "fb": "^1.1.1"
   }
 }
