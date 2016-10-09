@@ -72,7 +72,7 @@ module.exports = {
                                         .then(function (userinfo) {
                                             external_auth_table.insert({
                                                 user_id: user.id,
-                                                origin_id: req.body.origin_id,
+                                                origin: req.body.origin,
                                                 provider_id: req.body.provider_id
                                             })
                                                 .then(function (ex_auth) {

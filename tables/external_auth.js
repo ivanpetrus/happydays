@@ -6,7 +6,7 @@ var table = require('azure-mobile-apps').table();
 
 table.columns = {
     "user_id": "string",
-    "origin_id": "number",
+    "origin": "string",
     "provider_id": "string"
 };
 
