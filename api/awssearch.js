@@ -3,6 +3,7 @@
  */
 var helper = require("../helper");
 var amazon = require('amazon-affiliate-api');
+var url = require('url');
 /*
 Apparel	Y	Y	Y
 Automotive	Y	Y	Y
@@ -40,6 +41,9 @@ module.exports = {
 
     get: function (req, res, next) {
 
+        var url_parts = url.parse(req.url, true);
+        var query = url_parts.query;
+        console.log(query);
         if (helper.validateAuth(req, res)) {
 
             var client = amazon.createClient({
@@ -47,14 +51,7 @@ module.exports = {
                 awsSecret: "USc4CaO7hNF2/gGM0EO3jXUMjpr+6BKjEzqYwYay",
                 awsTag: "mockupbuilder-20"
             });
-            client.itemSearch({
-                searchIndex: 'Toys',
-                keywords: ' ',
-                condition: 'New',
-                responseGroup: 'Medium',
-                itemPage: '20',
-                version: "2013-08-01"
-            }).then(function(results){
+            client.itemSearch(query).then(function(results){
                 console.log(results);
                 res.send(results);
             }).catch(function(err){
