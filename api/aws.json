@@ -6,12 +6,12 @@
     "access": "anonymous"
   },
   "put": {
-    "access": "disabled"
+    "access": "anonymous"
   },
   "patch": {
     "access": "disabled"
   },
   "delete": {
-    "access": "disabled"
+    "access": "anonymous"
   }
 }
