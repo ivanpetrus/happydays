@@ -18,17 +18,23 @@ module.exports = {
         var query = url_parts.query;
         console.log(query);
         if (helper.validateAuth(req, res)) {
-            client.itemSearch(query).then(function(results){
+            client.itemSearch(query).then(function (results) {
                 console.log(results);
                 res.send(results);
-            }).catch(function(err){
+            }).catch(function (err) {
                 console.log(err);
                 res.send(err);
             });
         }
     },
     post: function (req, res, next) {
-
+        client.cartCreate(req.body).then(function (results) {
+            console.log(results);
+            res.send(results);
+        }).fail( function (err) {
+            console.log(results);
+        res.send(err);
+    });
     },
     put: function (req, res, next) {
 
