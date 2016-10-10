@@ -19,11 +19,11 @@ module.exports = {
         console.log(query);
         if (helper.validateAuth(req, res)) {
             client.itemSearch(query).then(function (results) {
-                console.log(results);
-                res.send(results);
+                console.log(results.Items.Item);
+                res.send(results.Items.Item);
             }).catch(function (err) {
                 console.log(err);
-                res.send(err);
+                res.status(500).send(err.Items.Request.Errors[0].Message);
             });
         }
     },
@@ -32,18 +32,23 @@ module.exports = {
             console.log(results);
             res.send(results);
         }).fail(function (err) {
-            console.log(results);
-            res.send(err);
+            console.log(err);
+            res.status(500).send(err.Cart.Request.Errors[0].Message);
         });
     },
     put: function (req, res, next) {
 
     },
     delete: function (req, res, next) {
-        client.cartClear(req.body).then(function (results) {
+        var url_parts = url.parse(req.url, true);
+        var query = url_parts.query;
+        console.log(query);
+        client.cartClear(query).then(function (results) {
             console.log(results);
+            res.status(200).send(true);
         }).fail(function (err) {
             console.log(err);
+            res.status(500).send(err.Cart.Request.Errors[0].Message);
         });
     }
 
