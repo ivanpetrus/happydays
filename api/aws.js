@@ -20,10 +20,10 @@ module.exports = {
         if (helper.validateAuth(req, res)) {
             client.itemSearch(query).then(function (results) {
                 console.log(results);
-                res.send(results.Items.Item);
+                res.send(results);
             }).catch(function (err) {
                 console.log(err);
-                res.send(err.Items.Request.Errors);
+                res.send(err);
             });
         }
     },
