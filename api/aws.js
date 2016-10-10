@@ -20,27 +20,31 @@ module.exports = {
         if (helper.validateAuth(req, res)) {
             client.itemSearch(query).then(function (results) {
                 console.log(results);
-                res.send(results);
+                res.send(results.Items.Item);
             }).catch(function (err) {
                 console.log(err);
-                res.send(err);
+                res.send(err.Items.Request.Errors);
             });
         }
     },
     post: function (req, res, next) {
         client.cartCreate(req.body).then(function (results) {
             console.log(results);
-            res.send(results.Cart);
-        }).fail( function (err) {
+            res.send(results);
+        }).fail(function (err) {
             console.log(results);
-        res.send(err);
-    });
+            res.send(err);
+        });
     },
     put: function (req, res, next) {
 
     },
     delete: function (req, res, next) {
-
+        client.cartClear(req.body).then(function (results) {
+            console.log(results);
+        }).fail(function (err) {
+            console.log(err);
+        });
     }
 
 }
