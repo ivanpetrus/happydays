@@ -30,7 +30,7 @@ module.exports = {
     post: function (req, res, next) {
         client.cartCreate(req.body).then(function (results) {
             console.log(results);
-            res.send(results);
+            res.send(results.Cart);
         }).fail(function (err) {
             console.log(err);
             res.status(500).send(err.Cart.Request.Errors[0].Message);
