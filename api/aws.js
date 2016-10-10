@@ -23,7 +23,7 @@ module.exports = {
                 res.send(results.Items.Item);
             }).catch(function (err) {
                 console.log(err);
-                res.status(406).send(err.Items.Request.Errors[0].Message);
+                res.status(500).send(err.Items.Request.Errors[0].Message);
             });
         }
     },
@@ -33,7 +33,7 @@ module.exports = {
             res.send(results);
         }).fail(function (err) {
             console.log(err);
-            res.status(406).send(err.Cart.Request.Errors[0].Message);
+            res.status(500).send(err.Cart.Request.Errors[0].Message);
         });
     },
     put: function (req, res, next) {
@@ -48,7 +48,7 @@ module.exports = {
             res.status(200).send(true);
         }).fail(function (err) {
             console.log(err);
-            res.status(406).send(err.Cart.Request.Errors[0].Message);
+            res.status(500).send(err.Cart.Request.Errors[0].Message);
         });
     }
 
