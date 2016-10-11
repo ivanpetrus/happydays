@@ -16,8 +16,8 @@ module.exports = {
                     if (users.length === 1) {
                         users[0].password = "";
                         usertable.update(users[0]);
-                        res.json({message: "You password has been deleted. Currenlty you could log in without passwords." +
-                            " Please update your password in settings"});
+                        res.json({message: "Your password has been deleted. Currenlty you could sign in with empty password." +
+                            " Please update your password in settings asap"});
                     }
                     else
                         res.status(401).send("Provided email did not match");
