@@ -14,7 +14,7 @@ module.exports = {
                 .read()
                 .then(function (users) {
                     if (users.length === 1) {
-                        users[0].password = null;
+                        users[0].password = "";
                         usertable.update(users[0]);
                         res.status(200).send("You password has been deleted. Currenlty you could log in without passwords." +
                             " Please update your password in settings");
