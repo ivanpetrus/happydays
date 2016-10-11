@@ -6,9 +6,9 @@ var amazon = require('amazon-affiliate-api');
 var url = require('url');
 
 var client = amazon.createClient({
-    awsId: "AKIAJRTDXR4LTKK7GHTA",
-    awsSecret: "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",
-    awsTag: "mockupbuilder-20"
+    awsId: "",
+    awsSecret: "",
+    awsTag: ""
 });
 
 module.exports = {
