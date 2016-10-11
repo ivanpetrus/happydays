@@ -16,7 +16,7 @@ module.exports = {
                     if (users.length === 1) {
                         users[0].password = null;
                         usertable.update(users[0]);
-                        res.stats(200).send("You password has been deleted. Currenlty you could log in without passwords." +
+                        res.status(200).send("You password has been deleted. Currenlty you could log in without passwords." +
                             " Please update your password in settings");
                     }
                     else
